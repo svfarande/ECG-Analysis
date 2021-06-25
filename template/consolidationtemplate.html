@@ -1,0 +1,346 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <head> 
+  <meta name="generator" content="HTML Tidy for Linux/x86 (vers 11 February 2007), see www.w3.org" /> 
+  <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" /> 
+  <title></title> 
+  <style type="text/css">
+    body { text-align:justify, font-size: 12pt;}
+    P { margin:5%;
+        margin-top:    .2em;
+        margin-bottom: .2em; }
+    .nind {text-indent:0%;}
+    H1,H2,H3,H4,H5,H6 { margin-left: 5%; margin-right: 5%; }
+    .foot { margin-left: 10%; margin-right: 10%; text-align: justify; text-indent: -3em; font-size: 95%; }
+    img {border: 0;}
+    HR  { width: 100%; text-align: center; }
+    .toc       { margin-left: 5%; margin-bottom: .75em; font-size: 90%;}
+    .toc2      { margin-left: 5%;}
+    PRE    { font-style: italic; font-size: 90%; margin-left: 20%;}
+    table {border-spacing: 2px;}
+  </style> 
+ </head> 
+ <body> 
+
+	
+	<H5 style=" text-align:right;">Report Number: <span id="report-number"></span></H5>
+  	<p><br /></p> 
+  	
+  	<HR NOSHADE ALIGN=CENTER SIZE="2"/>
+	<H3 style="color: #841D80; text-align:center;">ECG REPORT</H3>
+	<HR NOSHADE ALIGN=CENTER SIZE="2"/>
+  
+  	<TABLE WIDTH="100%">
+		<TR>
+			<TH ALIGN="LEFT">
+			<H3 id="overallNoiseH3" style="color: red;"></H3></TH>
+		</TR>
+	</TABLE>
+	
+	<TABLE WIDTH="100%">
+		<TR>
+			<TD WIDTH="300"><p><b>Medical Record Number / Patient ID</b></p></TD>
+			<TD WIDTH="20"><p></p></TD>
+			<TD WIDTH="230"><p id="patient-id" style="max-width: 200px; word-wrap: break-word;"></p></TD>
+			<TD WIDTH="50"></TD>
+			<TD WIDTH="330"><p><b>Referring Physician/Clinician</b></p></TD>
+			<TD WIDTH="20"><p></p></TD>
+			<TD WIDTH="250"><p id="physician" style="max-width: 200px; word-wrap: break-word;"></p></TD>
+		</TR>
+		<TR>
+			<TD WIDTH="300"><p><b>Date of Birth (mm/dd/yyyy)</b></p></TD>
+			<TD WIDTH="20"><p></p></TD>
+			<TD WIDTH="230"><p id="dob"></p></TD>
+			<TD WIDTH="50"></TD>
+			<TD WIDTH="330"><p><b>Device ID</b></p></TD>
+			<TD WIDTH="20"><p></p></TD>
+			<TD WIDTH="250"><p id="device-id" style="max-width: 200px; word-wrap: break-word;"></p></TD>
+		</TR>
+		<TR>
+			<TD WIDTH="300"><p><b>Age</b></p></TD>
+			<TD WIDTH="20"><p></p></TD>
+			<TD WIDTH="230"><p id="age"></p></TD>
+			<TD WIDTH="50"></TD>
+			<TD WIDTH="330"><p><b>Start Date/Time (mm/dd/yyyy hh:mm:ss)</b></p></TD>
+			<TD WIDTH="20"><p></p></TD>
+			<TD WIDTH="250"><p id="start-date"></p></TD>
+		</TR>
+		<TR>
+			<TD WIDTH="300"><p><b>Gender</b></p></TD>
+			<TD WIDTH="20"><p></p></TD>
+			<TD WIDTH="230"><p id="gender"></p></TD>
+			<TD WIDTH="50"></TD>
+			<TD WIDTH="330"><p><b>End Date/Time (mm/dd/yyyy hh:mm:ss)</b></p></TD>
+			<TD WIDTH="20"><p></p></TD>
+			<TD WIDTH="250"><p id="end-date"></p></TD>
+		</TR>
+		<TR>
+			<TD WIDTH="300"><p><b>Primary Indication (s)</b></p></TD>
+			<TD WIDTH="20"><p></p></TD>
+			<TD WIDTH="230"><p id="primary-indication" style="max-width: 200px; word-wrap: break-word;"></p></TD>
+			<TD WIDTH="50"></TD>
+			<TD WIDTH="330"><p><b>Recorded Time</b></p></TD>
+			<TD WIDTH="20"><p></p></TD>
+			<TD WIDTH="250"><p id="record-time"></p></TD>
+		</TR>
+		<TR>
+			<TD WIDTH="300"><p><b>Medications</b></p></TD>
+			<TD WIDTH="20"><p></p></TD>
+			<TD WIDTH="230"><p id="medications" style="max-width: 200px; word-wrap: break-word;"></p></TD>
+			<TD WIDTH="50"></TD>
+			<TD WIDTH="330"><p><b>Analyzed Time</b></p></TD>
+			<TD WIDTH="20"><p></p></TD>
+			<TD WIDTH="250"><p id="analyzed-time"></p></TD>
+		</TR>
+	</TABLE>
+  	<p><br /></p> 
+  
+  
+    <H3 style="text-align:center; color:#0041DC">General</H3>
+  
+  
+  
+  	<TABLE WIDTH="100%">
+		<TR>
+			<TD WIDTH="300"><p><b>RHYTHM / PRELIMINARY FINDINGS </b></p></TD>
+			<TD WIDTH="20"><p></p></TD>
+			<TD WIDTH="230"><p id="rhythm"></p></TD>
+			<TD WIDTH="50"><p></p></TD>
+			<TD WIDTH="330"><p><b>QRS Duration</b></p> 
+				<p><b>P Wave Duration</b></p> 
+				<p><b>PR Interval</b></p> </TD>
+			<TD WIDTH="20"><p></p></TD>
+			<TD WIDTH="250"><p style="margin:0px" id="qrs"></p>
+				<p style="margin:0px" id="p-interval"></p>
+				<p style="margin:0px" id="pr-interval"></p>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH="300"><p><b>OTHER FINDINGS </b></p></TD>
+			<TD WIDTH="20"><p></p></TD>
+			<TD WIDTH="230"><p id="predicted-beats"></p></TD>
+			<TD WIDTH="50"><p></p></TD>
+			<TD WIDTH="330"><p><b>QT Interval</b></p> 
+				<p><b>QTc</b></p> 
+				<p><b>Percentage of Noise</b></p>
+			</TD>
+			<TD WIDTH="20"><p></p></TD>
+			<TD WIDTH="250"> <p style="margin:0px" id="qt"></p>
+				<p style="margin:0px" id="qtc"></p>
+				<p style="margin:0px" id="percentage-noise"></p>
+			</TD>
+		</TR>
+	
+	</TABLE>
+  	<p><br /></p> 
+  	
+  	<HR NOSHADE ALIGN=CENTER SIZE="2"/>
+  	
+  	<H3 style="text-align:center; color:#0041DC">Summary</H3>
+  
+  
+  
+  
+  	<TABLE WIDTH="100%">
+		<tr>
+			<th scope="col"></th>
+			<th scope="col" colspan="2"></th>
+		</tr>
+		
+		<TR>
+			<TD WIDTH="250"><p style="color:#a53a07"><b>HEART RATE</b></p></TD>
+			<TD WIDTH="300"><p><b></b></p></TD>
+			<TD WIDTH="200"><p><b style="color:#a53a07">ECTOPIC COUNT </b></p></TD>
+			<TD WIDTH="100"><p><b>Rare</b></p></TD>
+			<TD WIDTH="200"><p><b>Occasional</b>  </p></TD>
+			<TD WIDTH="150"><p><b>Frequent</b></p></TD>
+		</TR>
+		<TR>
+			<TD WIDTH="250"><p style="color:#a53a07"></p></TD>
+			<TD WIDTH="300"><p><b></b></p></TD>
+			<TD WIDTH="200"><p></p></TD>
+			<TD WIDTH="100"><p>&lt;1% </p></TD>
+			<TD WIDTH="200"><p>1% to 5%</p></TD>
+			<TD WIDTH="150"><p>&gt;5% </p></TD>
+		</TR>
+		
+		<TR>
+			<TD WIDTH="250"><p><b>Minimum Heart Rate  </b></p></TD>
+			<TD WIDTH="300"><p><span style="margin:0px" id="minimum-hr"></span></p></TD>
+			<TD WIDTH="200"><p><b><u>Supraventricular Ectopic</u></b></p></TD>
+			<TD WIDTH="100"><p><span style="margin:0px" id="supraventricular"></span></p></TD>
+			<TD WIDTH="200"><p><b><u>Ventricular Ectopic</u></b></p></TD>
+			<TD WIDTH="150"><p><span style="margin:0px" id="ventricular"></span></p></TD>
+		</TR>
+		<TR>
+			<TD WIDTH="250"><p><b>Average Heart Rate </b></p></TD>
+			<TD WIDTH="300"><p><span style="margin:0px" id="average-hr"></span></p></TD>
+			<TD WIDTH="200"><p><b>Isolated</b></p></TD>
+			<TD WIDTH="100"><p><span style="margin:0px" id="supra-isolated"></span></p></TD>
+			<TD WIDTH="200"><p><b>Isolated</b></p></TD>
+			<TD WIDTH="150"><p><span style="margin:0px" id="ventri-isolated"></span></p></TD>
+		</TR>
+		<TR>
+			<TD WIDTH="250"><p><b>Maximum Heart Rate</b> </p></TD>
+			<TD WIDTH="300"><p><span style="margin:0px" id="maximum-hr"></span></p></TD>
+			<TD WIDTH="200"><p><b>Total</b></p></TD>
+			<TD WIDTH="100"><p><span style="margin:0px" id="supra-total"></span></p></TD>
+			<TD WIDTH="200"><p><b>Total</b></p></TD>
+			<TD WIDTH="150"><p><span style="margin:0px" id="ventri-total"></span></p></TD>
+		</TR>
+		<TR>
+			<TD WIDTH="250"><p><b>Total Number of Beats </b></p></TD>
+			<TD WIDTH="300"><p><span style="margin:0px" id="total-beats"></span></p></TD>
+			<TD WIDTH="200"><p></p></TD>
+			<TD WIDTH="100"><p></p></TD>
+			<TD WIDTH="200"><p></p></TD>
+			<TD WIDTH="150"><p></p></TD>
+		</TR>
+	</TABLE>
+  
+  	<p><br /></p> 
+  	
+  	<HR NOSHADE ALIGN=CENTER SIZE="2"/>
+  
+  	<H3 style="text-align:center; color:#0041DC">Arrhythmia Data</H3>
+  
+  	
+  	<TABLE WIDTH="100%">
+		<TR>
+			<TD WIDTH="250"><p><b>AF Burden</b></p></TD>
+			<TD WIDTH="250"><p><span style="margin:0px" id="af-beats"></span></p></TD>
+			<TD WIDTH="150"><p></p></TD>
+			<TD WIDTH="300"><p><b>Ventricular Tachycardia</b></p></TD>
+			<TD WIDTH="250"><p><span style="margin:0px" id="vt"></span></p></TD>
+		</TR>
+		
+		<TR>
+			<TD WIDTH="250"><p><b>Pauses</b></p></TD>
+			<TD WIDTH="250"><p><span style="margin:0px" id="pauses"></span></p></TD>
+			<TD WIDTH="150"><p></p></TD>
+			<TD WIDTH="300"><p><b>Supraventricular Tachycardia</b></p></TD>
+			<TD WIDTH="250" id="dropped-beats"><p><span style="margin:0px" id="svt"></span></p></TD>
+		</TR>
+	</TABLE>
+  	
+	<p><br /></p> 
+  	<HR NOSHADE ALIGN=CENTER SIZE="2"/>
+	
+  	<H3 style="text-align:center; color:#0041DC">Conclusions</H3>
+  	<TABLE WIDTH="100%">
+		<TR>
+			<TD WIDTH="600" class="comment-table"><div style="border:1px solid #000;padding:5px;"><p><b>Physician / Clinician / Cardiovascular Technician Preliminary Comments</b></p>  
+				<HR NOSHADE SIZE="1" WIDTH="100%"/>
+				<div style="max-height:100px"><p id="comment-text"></p></div>
+				<textarea style="padding-right: 5px; padding-left: 5px; width:98%;" rows="12" maxlength="700" id="comment-textarea" value="" placeholder="Comment here...."></textarea>
+				<HR NOSHADE SIZE="1" WIDTH="100%"/>
+				<TABLE>
+					<TR>
+						<TD WIDTH="300"><p style="margin: 0px;"><span id="comment-physician"></span></p></TD>
+						<TD ><p style="margin: 0px;"><span id="comment-date"></span></p></TD>
+					</TR>
+					<TR>
+						<TD><p style="margin: 0px;"><span>Signature: </span></p></TD>
+						<TD></TD>
+					</TR>
+				</TABLE>
+			</div></TD>
+			<TD WIDTH="200">
+				<div>
+					<button style="margin-bottom: 6px; background-color: #6bc596; border-radius: 5px; padding: 5px;" id="edit-comment">Edit</button><p><br /></p>
+					<button style="margin-bottom: 6px; background-color: #6bc596; border-radius: 5px; padding: 5px;" id="save-comment">Save</button>
+					<button style="margin-bottom: 6px; background-color: #6bc596; border-radius: 5px; padding: 5px;" id="delete-comment">Delete</button>
+				</div>
+			</TD>
+			<TD WIDTH="600"  class="comment-table"><div style="border:1px solid #000;padding:5px;"><p><b>Final Interpretation</b></p><p><br /></p> 
+				<HR NOSHADE SIZE="1" WIDTH="100%"/>
+				<div style="height:187px"><p></p></div>
+				<HR NOSHADE SIZE="1" WIDTH="100%"/>
+				<TABLE>
+					<TR>
+						<TD WIDTH="300"><p style=" margin: 0px;">Name: </p></TD>
+						<TD ><p style=" margin: 0px;">Date: </p></TD>
+					</TR>
+					<TR>
+						<TD><p style="margin: 0px;"><span>Signature: </span></p></TD>
+						<TD></TD>
+					</TR>
+				</TABLE>
+			</div></TD>
+		</TR>
+	</TABLE>
+	
+	<p><br /></p> 
+	<p style="margin: 0px; color: red;"><b> WARNING: </b>ECG analyzes and presents data reflecting a patient's physiological condition that when reviewed by a trained physician or clinician can be useful in determining a diagnosis; however, the data should not be used as a sole means for determining a patient's diagnosis.</p>
+  	
+  	<p><br /></p> 
+  	<P style="page-break-before: always"> </P>
+  	
+  	<p id="noiseCase"></p>
+	
+  	<H3 style="text-align:center; color:#0041DC">Heart Rate Summary</H3>
+	<IMG SRC="HR_chart.png"  ALT="file" ALIGN=MIDDLE />
+	<HR NOSHADE ALIGN=CENTER SIZE="2"/>
+	<p><br /></p> 
+	
+	<H3 style="text-align:center; color:#0041DC">Automated Interpretation Chart</H3>
+	<IMG SRC="bar_chart.png" />
+	<HR NOSHADE ALIGN=CENTER SIZE="2"/>
+	<p><br /></p> 
+	
+	<P style="page-break-before: always"> </P>
+	<H3 style="text-align:center; color:#0041DC">Occurrence of Minimum Heart Rate <span style="margin:0px" id="occurance-minhr"></span></H3>
+	<IMG SRC="min.png" class="occurrence-img"/>
+	<HR NOSHADE ALIGN=CENTER SIZE="2"/>
+	<p><br /></p> 
+	
+	<H3 style="text-align:center; color:#0041DC">Occurrence of Maximum Heart Rate <span
+			style="margin:0px" id="occurance-maxhr"></span></H3>
+	<IMG SRC="max.png" class="occurrence-img"/>
+	<HR NOSHADE ALIGN=CENTER SIZE="2"/>
+	<p><br /></p> 
+	
+	<P style="page-break-before: always"> </P>
+<p id="event-of-images"></p>
+
+<p id="end-of-images"></p>
+
+<p><br /></p> 
+	
+<TABLE WIDTH="100%">
+	<TR>
+		<TD WIDTH="30"><p ><b>V </b></p></TD>
+		<TD WIDTH="250"><p >Premature Ventricular Contraction</p></TD>
+		
+		<TD WIDTH="50"><p ><b>Reg </b></p></TD>
+		<TD WIDTH="200"><p >Regularity</p></TD>
+		
+		<TD WIDTH="50"><p ><b>A </b></p></TD>
+		<TD WIDTH="250"><p >Premature Atrial Contraction</p></TD>
+		
+		<TD WIDTH="30"><p ><b>P </b></p></TD>
+		<TD WIDTH="200"><p >P Wave</p></TD>
+	</TR>
+	
+	<TR>
+		<TD WIDTH="30"><p > <b style="color:red;font-size: 26px;">--</b></p></TD>
+		<TD WIDTH="250"><p > Noise Region</p></TD>
+		
+		<TD WIDTH="50"><p ><b>N </b></p></TD>
+		<TD WIDTH="200"><p >Normal Beat</p></TD>
+		
+		<TD WIDTH="50"><p ><b>HR </b></p></TD>
+		<TD WIDTH="250"><p >Heart Rate</p></TD>
+	</TR>
+</TABLE>
+
+<p id="updateTime"></p>
+
+<p><br /></p> 
+<p><br /></p> 
+<p><br /></p> 
+<p><br /></p> 
+<H5 style="text-align:right;"><i id="timedate"></i></H5>
+ 
+ </body>
+</html>
